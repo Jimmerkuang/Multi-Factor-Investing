@@ -55,8 +55,7 @@ class Trainer(object):
         self.daily_ic['cum_ic'] = self.daily_ic.ic.cumsum()
         plt.figure(figsize=(10, 8))
         plt.plot(pd.to_datetime(self.score_calendar, format='%Y%m%d'), self.daily_ic['cum_ic'])
-        plt.xlabel('Year')
-        plt.legend(['Cumsum_IC'])
+        plt.legend(['Cumsum_RankIC'])
         plt.show()
 
     def _lgb_reg_model(self, x_train, y_train, x_test, y_test):
